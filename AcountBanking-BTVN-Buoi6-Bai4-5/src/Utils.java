@@ -7,7 +7,7 @@ public class Utils {
             System.out.print(mess);
             Scanner sc = new Scanner(System.in);
             int n = Integer.parseInt(sc.nextLine());
-            if(n >= 0){
+            if(n > 0){
                 return n;
             }
             else{
@@ -21,7 +21,7 @@ public class Utils {
             System.out.print(mess);
             Scanner sc = new Scanner(System.in);
             double n = Double.parseDouble(sc.nextLine());
-            if(n >= 0){
+            if(n > 0){
                 return n;
             }
             else{

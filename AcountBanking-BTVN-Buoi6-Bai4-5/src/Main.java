@@ -57,7 +57,8 @@ public class Main {
 
         int choice;
         while(true) {
-            int idTaiKhoan = Utils.getInt("Nhập ID tài khoản (0-9): ");
+            System.out.print("Nhập ID tài khoản của bạn: ");
+            int idTaiKhoan = Integer.parseInt(sc.nextLine());
             do{
                 Utils.menu();
                 choice = Utils.getInt("Nhập vào lựa chọn của bạn: ");
