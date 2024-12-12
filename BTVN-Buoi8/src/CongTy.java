@@ -257,6 +257,7 @@ public class CongTy {
             if(nvc instanceof GiamDoc){
                 if(((GiamDoc) nvc).getCoPhan() == coPhanMax){
                     ((GiamDoc) nvc).hienThiNhanVien();
+                    break;
                 }
             }
         }
