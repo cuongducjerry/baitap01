@@ -6,19 +6,18 @@ import java.util.stream.Collectors;
 
 public class ListStudentManage {
 
-    public static Scanner sc = new Scanner(System.in);
+    public Scanner sc = new Scanner(System.in);
 
-    public static ArrayList<Student> students = new ArrayList<Student>();
+    public ArrayList<Student> students = new ArrayList<Student>();
 
-    public static Set<String> setID = new HashSet<>();
+    public Set<String> setID = new HashSet<>();
 
     public void addStudent() throws Exception {
         String ID = Utils.getString("Enter Student ID want to add: ");
-        for(Student s : students){
-            if(setID.contains(ID) && ID.equals(s.getID())){
-                throw new Exception("Student with ID " + ID + " already exist!");
-            }
+        if(setID.contains(ID)){
+            throw new Exception("Student with ID " + ID + " already exist!");
         }
+
         String name = Utils.getString("Enter Student Name want to add: ");
         double score = Utils.getDouble("Enter Student Score want to add: ");
         students.add(new Student(ID, name, score));
@@ -30,7 +29,7 @@ public class ListStudentManage {
         String ID = Utils.getString("Enter Student ID want to remove: ");
         boolean check = false;
         for(Student s : students){
-            if(setID.contains(ID) && ID.equals(s.getID())){
+            if(ID.equals(s.getID())){
                 check = true;
                 students.remove(s);
                 break;
@@ -54,7 +53,7 @@ public class ListStudentManage {
         String ID = Utils.getString("Enter Student ID want to search: ");
         boolean check = false;
         for(Student s : students){
-            if(setID.contains(ID) && ID.equals(s.getID())){
+            if(ID.equals(s.getID())){
                 check = true;
                 System.out.println(s);
                 break;
